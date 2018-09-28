@@ -1,0 +1,26 @@
+{
+  "vanilla":{
+    "name":"Vanilla",
+    "price":"2€"
+  },
+  "strawberry":{
+    "name":"Strawberry",
+    "price":"2.5 Egee!"
+  },
+  "blueberry":{
+    "name":"Blueberry",
+    "price":"Arm and a leg."
+  },
+  "rasberry":{
+    "name":"Rasberry",
+    "price":"Your firstborn!"
+  },
+  "chocolate":{
+    "name":"Chocolate",
+    "price":"5€"
+  },
+  "secret":{
+    "name":"'Snow'",
+    "price":"500€ dont do drugs....mmmm-kay?"
+  }
+}

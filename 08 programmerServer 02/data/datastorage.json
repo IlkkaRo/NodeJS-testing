@@ -1,0 +1,32 @@
+[
+  {
+  "firstName": "Satu",
+  "lastName": "Jokuvaan",
+  "yearOfBirth": 666,
+  "photo": "satu.png"
+  },
+  {
+  "firstName": "Kikkelis",
+  "lastName": "Kokkelis",
+  "yearOfBirth": 1999,
+  "yearOfDeath": 2018,
+  "photo": "kikkok.png"
+  },
+  {
+  "firstName": "Pentti",
+  "lastName": "Brave",
+  "yearOfBirth": 1977,
+  "photo": "pena.png"
+  },
+  {
+  "firstName": "Pertti",
+  "lastName": "Wise",
+  "yearOfBirth": 1975,
+  "photo": "pera.png"
+  },
+  {
+  "firstName": "Hello",
+  "lastName": "World",
+  "yearOfBirth": 1972
+  }
+]
