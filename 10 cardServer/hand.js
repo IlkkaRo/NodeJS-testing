@@ -16,4 +16,7 @@ module.exports = class Hand extends Deck {
       this.deck.reverse();
     }
   }
+  get sum() {
+    return this.deck.reduce((sum,card)=>sum + card.rank,0);
+  }
 }
