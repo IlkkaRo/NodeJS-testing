@@ -1,0 +1,15 @@
+{
+  "name": "16-passwordexpress",
+  "version": "1.0.0",
+  "description": "- create project folder\r - `npm init`  \r   - answer the quetions\r   - this creates the `package.json` file\r - `eslint --init`\r   - answer the questions\r - `npm install express`\r   - add express dependancy to the package.json file\r   - creates the `node_modules` folder\r   - remember `.gitignore` !\r - `npm install ejs` for form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "IlkkaRo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

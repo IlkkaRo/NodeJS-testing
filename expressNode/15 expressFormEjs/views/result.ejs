@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= text %></h1>
+    <p>Name: <%= data.firstname %> <%= data.lastname %> </p>
+    <p>ID: <%= data.number %></p>
+    <p>Department: <%= data.department %> </p>
+    <p>Salary: <%= data.salary %> €</p>
+    <ul>
+      <% nameArray.forEach( item=> {
+        if(item!=='Darth') { %>
+        <li> <%= item %> </li>
+      <% }}); %>
+    </ul>
+  </body>
+</html>
