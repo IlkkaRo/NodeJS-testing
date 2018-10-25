@@ -3,8 +3,9 @@
 const mysql     = require('mysql');
 
 module.exports  = class Database {
-  constructor(options) {
+  constructor(options, debug=false) {
     this.options = options;
+    this.debug = debug;
   }
 
   doQuery(sql,...parameters) {
@@ -14,8 +15,10 @@ module.exports  = class Database {
         if(err) {
           reject(new Error('SQL Error:' + err));
         }
+        if (this.debug){
         /* eslint-disable no-console */
-        console.log(sqlStatement.sql);
+          console.log(sqlStatement.sql);
+        }
         resolve(result);
       });
       connection.end();

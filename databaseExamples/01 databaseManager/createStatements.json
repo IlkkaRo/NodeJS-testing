@@ -5,21 +5,21 @@
   "admin"         : "root",
   "adminpassword" : "",
   "user"          : "saku",
-  "password"      : "secret",
+  "userpassword"  : "secret",
   "database"      : "persondatabase",
   "dropuser"      : true,
   "tables"        : [
     {
       "name"  : "person",
       "fields"  : [
-        "personId integer NOT NULL PRIMARY KEY",
+        "personID integer NOT NULL PRIMARY KEY",
         "firstname varchar(20) NOT NULL",
         "lastname varchar(30) NOT NULL",
         "department varchar(15)",
         "salary decimal(6,2)"
       ],
       "data":[
-        [1,"Leia","Organa","ICT", 5000]
+        [1,"Leia","Organa","ICT", 5000],
         [2,"Luke","Skywalker","Jedi", 8686]
       ]
     }
