@@ -12,6 +12,7 @@
   - add express dependancy to the package.json file
   - creates the `node_modules` folder
   - remember `.gitignore` !
+  - `npm install express ejs`
 
 ## Program server
 
