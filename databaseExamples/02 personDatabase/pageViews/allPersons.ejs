@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="/styles/styles.css" type="text/css">
   </head>
   <body>
-    <h1>All persons</h1>
     <main>
+      <h1>All persons</h1>
       <table>
         <thead>
           <tr>
             <th>PersonID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>First name</th>
+            <th>Last name</th>
             <th>Department</th>
             <th>Salary</th>
           </tr>
@@ -21,7 +21,7 @@
         <tbody>
           <% result.forEach(person =>{ %>
             <tr>
-              <td><%= person.personID %></td>
+              <td><%= person.personId %></td>
               <td><%= person.firstname %></td>
               <td><%= person.lastname %></td>
               <td><%= person.department %></td>
@@ -32,6 +32,5 @@
       </table>
       <a href="/"><button>Menu</button></a>
     </main>
-
   </body>
 </html>

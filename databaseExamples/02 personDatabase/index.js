@@ -1,37 +1,41 @@
 'use strict';
 
-const http    = require('http');
-const path    = require('path');
-const express = require('express');
-const app     = express();
+const http=require('http');
+const path=require('path');
+const express=require('express');
 
-const {host,port,debug} = require('./serverConfig');
+const app=express();
+const {host,port,debug}=require('./serverConfig');
 
-const server  = http.createServer(app);
+const server=http.createServer(app);
+//this will require the initDataStorage function and call it
+//with debug parameter value from serverConfig.json
+const personStorage=require('./personDb')(debug);
 
-//this will require the initDataStorage function and call it with debug parameter from serverConfig.json
-const personStorage = require('./personDB')(debug);
+const statusHandling=[sendErrorPage,sendStatusPage];
 
-const statusHandling  = [sendErrorPage,sendStatusPage];
+const getroutes=require('./routes/getroutes')(personStorage,...statusHandling);
+const insertroutes=require('./routes/insertroutes')(personStorage,...statusHandling);
 
-const getRoutes     = require('./routes/getRoutes')(personStorage,...statusHandling);
+app.use(express.urlencoded({extended:false}));
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'pageViews'));
 
 app.use(express.static(path.join(__dirname,'public')));
-app.use('/',getRoutes);
-app.get('/',(req,res) => res.sendFile(path.join(__dirname,'menu.html')));
+app.use('/',getroutes);
+app.use('/', insertroutes);
+app.get('/',(req,res)=>res.sendFile(path.join(__dirname,'menu.html')));
 
-server.listen(port,host,() =>
+server.listen(port,host,()=>
 /*eslint-disable no-console*/
   console.log(`Server ${host} running at ${port}`)
 );
 
 function sendErrorPage(res, message='Error', title='Error', header='Error') {
-  sendStatusPage(res, message, title, header);
+  sendStatusPage(res, message, title,header);
 }
 
-function sendStatusPage(res, message='Status', title='Status', header='Status') {
-  return res.render('statusPage',{message:message,header:header,title:title});
+function sendStatusPage(res, message='Status', title='Status', header='Status'){
+  return res.render('statusPage',{title:title,header:header,message:message});
 }
