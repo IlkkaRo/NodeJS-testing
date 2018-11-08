@@ -20,7 +20,7 @@ const initRoutes = function(storage, sendErrorPage) {
       res.sendStatus(401);
     }
     else {
-      let personId=req.body.personId;
+      let personId=req.body.personID;
       dataStorage.get(personId)
         .then(person=>res.render('personPage',{person}))
         .catch(err=>sendErrorPage(res,err.message,'PersonError','Oops!'));

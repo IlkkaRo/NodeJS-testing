@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
   </head>
   <body>
     <h1><%= header %></h1>
     <form action="<%= action %>" method="post">
       <p>
-        <label for="personId">PersonId:</label>
-        <input type="text" id="personId" name="personId" size="5"
-        value="<%=personId.value %>" <%= personId.readonly %> >
+        <label for="personID">PersonID:</label>
+        <input type="text" id="personID" name="personID" size="5"
+        value="<%=personID.value %>" <%= personID.readonly %> >
       </p>
       <p>
         <label for="firstname">First name:</label>
@@ -34,6 +35,6 @@
       </p>
       <button type="submit">Submit</button>
     </form>
-    <a href="/"><button>Menu</button>  
+    <a href="/"><button>Menu</button>
   </body>
 </html>
