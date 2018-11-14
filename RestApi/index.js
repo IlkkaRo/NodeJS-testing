@@ -5,7 +5,7 @@ const http    = require('http');
 const cors    = require('cors');
 
 const express = require('express');
-const app     = require('app');
+const app     = express();
 
 const port    = 3000;
 const host    = 'localhost';
@@ -15,5 +15,7 @@ const server  = http.createServer(app);
 app.use(cors());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
+const api   = require('./gameApi')();
+app.use('/api', api);
 /* eslint-disable no-console*/
 server.listen(port,host, () => console.log(`Server at ${port}`));
