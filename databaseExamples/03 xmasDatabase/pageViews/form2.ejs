@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+  </head>
+  <body>
+    <h1><%= header %></h1>
+    <form action="<%= action %>" method="post">
+      <p>
+        <label for="giftID">GiftID:</label>
+        <input type="text" id="giftID" name="giftID" size="5"
+        value="<%=giftID.value %>" <%= giftID.readonly %> >
+      </p>
+      <p>
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname" name="firstname" size="15"
+        value="<%=firstname.value %>" <%= firstname.readonly %> >
+      </p>
+      <p>
+        <label for="giftname">Gift name:</label>
+        <input type="text" id="giftname" name="giftname" size="25"
+        value="<%=giftname.value %>" <%= giftname.readonly %> >
+      </p>
+      <p>
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" size="10"
+        value="<%= price.value %>" <%= price.readonly %> >
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+    <a href="/"><button>Naughty / Nice</button>
+  </body>
+</html>

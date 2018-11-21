@@ -1,0 +1,16 @@
+{
+  "getAllSql"         : [
+    "select giftID, firstname, giftname, price from gift"
+  ],
+  "getGiftSql"      : [
+    "select giftID, firstname, giftname, price from gift",
+    "where giftID = ?"
+  ],
+  "insertGiftSql"  : [
+    "insert into gift (giftID, firstname, giftname, price)",
+    "values(?,?,?,?)"
+  ],
+  "deleteGiftSql"  : [
+    "delete from gift where giftID=?"
+  ]
+}

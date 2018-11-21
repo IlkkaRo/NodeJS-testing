@@ -3,7 +3,7 @@
 const routes=require('express').Router();
 
 const initRoutes = function(storage, sendErrorPage) {
-  let dataStorage=storage;
+  let dataStorage = storage;
 
   routes.get('/all', (req,res)=>{
     dataStorage.getAll()

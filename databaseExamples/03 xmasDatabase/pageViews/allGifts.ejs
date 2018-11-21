@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All gifts</title>
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+  </head>
+  <body>
+    <main>
+      <h1>All gifts</h1>
+      <table id="gifttable">
+        <thead>
+          <tr>
+            <th>GiftID</th>
+            <th>First name</th>
+            <th>Gift name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% result.forEach(gifts =>{ %>
+            <tr>
+              <td><%= gifts.giftID %></td>
+              <td><%= gifts.firstname %></td>
+              <td><%= gifts.giftname %></td>
+              <td><%= gifts.price %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <a href="/"><button>Naughty / Nice</button></a>
+    </main>
+  </body>
+</html>

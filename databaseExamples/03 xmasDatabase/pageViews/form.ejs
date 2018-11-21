@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+  </head>
+  <body>
+    <table id="cleartable">
+      <tbody>
+    <tr><h1><%= header %></h1></tr>
+      <form action="<%= action %>" method="post">
+        <tr>
+          <td><label for="giftID">GiftID:</label></td>
+          <td><input type="text" id="giftID" name="giftID" size="5"
+          value="<%=giftID.value %>" <%= giftID.readonly %> ></td>
+        </tr>
+        <tr>
+          <td><label for="firstname">First name:</label></td>
+          <td><input type="text" id="firstname" name="firstname" size="15"
+          value="<%=firstname.value %>" <%= firstname.readonly %> ></td>
+        </tr>
+        <tr>
+          <td><label for="giftname">Gift name:</label></td>
+          <td><input type="text" id="giftname" name="giftname" size="25"
+          value="<%=giftname.value %>" <%= giftname.readonly %> ></td>
+        </tr>
+        <tr>
+          <td><label for="price">Price:</label></td>
+          <td><input type="text" id="price" name="price" size="10"
+          value="<%= price.value %>" <%= price.readonly %> ></td>
+        </tr>
+        <tr><td colspan="2" id="formsub"><button type="submit">Submit</button></td></tr>
+      </form>
+    </tbody>
+    </table>
+      <a href="/"><button>Naughty / Nice</button>
+  </body>
+</html>

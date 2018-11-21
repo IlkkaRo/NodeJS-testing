@@ -8,11 +8,10 @@
   - this creates the `package.json` file
 - `eslint --init`
   - answer the questions
-- `npm install mysql`
+- `npm install mysql express ejs`
   - add express dependancy to the package.json file
   - creates the `node_modules` folder
   - remember `.gitignore` !
-  - `npm install express ejs`
 
 ## Program server
 
