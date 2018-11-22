@@ -1,8 +1,12 @@
 body {
-  background-color: darkred;
   display: grid;
   align-items: center;
   justify-items: center;
+  background-image: url('/images/aurora.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 form {
@@ -20,6 +24,7 @@ h1 {
   padding: 0.5em;
   padding-right: 0.7em;
   border-radius: 0.3em;
+  box-shadow: 0.2em 0.2em 0.3em rgb(0,0,0);
 }
 
 main {
@@ -39,6 +44,7 @@ th{
 }
 
 table{
+  box-shadow: 0.2em 0.2em 0.3em rgb(0,0,0);
   margin-bottom: 1em;
   background-color: #660102;
 }
@@ -101,4 +107,20 @@ button:hover {  font-family: sans-serif;
 #formsub {
   text-align: center;
   vertical-align: middle;
+}
+
+.prettify {
+  box-shadow: 0.2em 0.2em 0.3em rgb(0,0,0);
+  background-color: darkred;
+  padding: 1em;
+  border: 0.1em solid black;
+  border-radius: 0.7em;
+}
+
+#textify {
+  font-size: 1em;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 1px 1px black;
+  box-shadow: 0.2em 0.2em 0.3em rgb(0,0,0);
 }
