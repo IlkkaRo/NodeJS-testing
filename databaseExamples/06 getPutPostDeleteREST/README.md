@@ -8,7 +8,7 @@
   - this creates the `package.json` file
 - `eslint --init`
   - answer the questions
-- `npm install mysql express express-session express-mysql-session ejs bcrypt`
+- `npm install express cors`
   - add express dependancy to the package.json file
   - creates the `node_modules` folder
   - remember `.gitignore` !

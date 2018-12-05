@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>REST API</title>
+    <style>
+      #uri{
+        display : grid;
+      }
+      .hidden{
+        display : none;
+      }
+    </style>
+    <script>
+      (function() {
+        let method  = "GET";
+        let jsonsarea;
+        let jsontext;
+        let urifield;
+        let resultarea;
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+          jsonarea    = document.getElementById('jsonarea');
+          jsontext    = document.getElementById('jsontext');
+          urifield    = document.getElementById('urifield');
+          resultarea  = document.getElementById('result');
+
+          document.getElementById('GET').addEventListener('click', choose);
+          document.getElementById('PUT').addEventListener('click', choose);
+          document.getElementById('POST').addEventListener('click', choose);
+          document.getElementById('DELETE').addEventListener('click', choose);
+          urifield.value = '/resources/';
+
+          document.getElementById('sendJson').addEventListener('click', () => {
+            let options = {
+              method  : method,
+              headers : {
+                'Content-type':'application/json'
+              }
+            };
+            if(method === 'PUT' || method === 'POST') {
+              options.body=jsontext.value;
+            }
+            fetch(urifield.value,options)
+              .then(result => result.json())
+              .then(data => updateResult(data))
+              .catch(() => console.log('error'));
+          });
+        } //init end
+
+        function choose(e) {
+          resultarea.textContent='';
+          method = e.target.value;
+          if(method === 'GET' || method === 'DELETE') {
+            jsonarea.setAttribute('class', 'hidden');
+          } else {
+            jsonarea.removeAttribute('class');
+          }
+        }
+
+        function updateResult(data) {
+          if(method === 'GET') {
+            resultarea.textContent  = JSON.stringify(data);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <p id="uri">
+      <label> Input URI in format http://localhost:3000/resources/1</label>
+      <input type="text" id="urifield">
+    </p>
+    <fieldset>
+      <legend>Choose method</legend>
+      <label>
+        <input type="radio" name="method" id="GET" value="GET" checked>GET
+      </label>
+      <label>
+        <input type="radio" name="method" id="PUT" value="PUT">PUT
+      </label>
+      <label>
+        <input type="radio" name="method" id="POST" value="POST">POST
+      </label>
+      <label>
+        <input type="radio" name="method" id="DELETE" value="DELETE">DELETE
+      </label>
+    </fieldset>
+    <div id="jsonarea" class="hidden">
+      <h2>JSON body</h2>
+        <textarea type="text" id="jsontext"></textarea>
+    </div>
+    <button id="sendJson">Submit</button>
+    <div>
+      <h2>Result</h2>
+      <pre id="result"></pre>
+    </div>
+  </body>
+</html>
