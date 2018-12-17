@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS sessions (
   session_id VARCHAR(128) COLLATE utf8mb4_bin NOT NULL,
   expires INT(11) UNSIGNED NOT NULL,
   data TEXT COLLATE utf8mb4_bin,
-  PRIMARY KEY (session_id)
+  PRIMARY KEY (sessionID)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS User (
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS User (
 CREATE TABLE IF NOT EXISTS UserSession (
   sessionId VARCHAR(128) COLLATE utf8mb4_bin PRIMARY KEY,
   username VARCHAR(45) NOT NULL,
-  FOREIGN KEY (sessionId) REFERENCES sessions (session_id)
+  FOREIGN KEY (sessionId) REFERENCES sessions (sessionID)
   ON DELETE CASCADE
 ) ENGINE = InnoDB;
 

@@ -8,7 +8,7 @@ const checkPasswordSql  =
   'Select role from User where username=? and userpassword=?';
 const isAllowedSql      =
   'select username from User where username=(select username '+
-  'from UserSession where sessionId=?) and role=?';
+  'from UserSession where sessionID=?) and role=?';
 const insertSessionSql  =
   'insert into UserSession (sessionID, username) values(?,?)';
 const deleteSessionSql  =

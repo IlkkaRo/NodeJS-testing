@@ -1,7 +1,7 @@
 const userText = {
   title   : 'All logged users',
   header  : 'To all logged users',
-  info    : 'This oage is shown only to users with normal user privileges.' +
+  info    : 'This page is shown only to users with normal user privileges.' +
     'This page requires user to login'
 };
 

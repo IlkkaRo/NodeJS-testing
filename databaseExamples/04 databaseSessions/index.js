@@ -1,10 +1,10 @@
-'use strict'; //160
+'use strict';
 
 const http        = require('http');
 const path        = require('path');
 const express     = require('express');
 const session     = require('express-session');
-const bcrypt      = require('bcryptjs');
+const bcryptjs    = require('bcryptjs');
 const MySQLStore  = require('express-mysql-session')(session);
 
 const app   = express();
@@ -41,9 +41,8 @@ app.use('/styles',express.static(path.join(__dirname,'styles')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'pageviews'));
 
-var salt      = bcrypt.genSaltSync(10);
 let password  = new Date().toString();
-var hash      = bcrypt.hashSynch(password, salt);
+var hash      = bcryptjs.hashSync(password, 10);
 
 app.use(session({
   secret  : process.env.SECRET || hash,
