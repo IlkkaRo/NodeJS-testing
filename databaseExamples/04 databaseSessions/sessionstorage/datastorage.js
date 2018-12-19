@@ -46,7 +46,7 @@ module.exports = class SessionStorage {
     return new Promise(async (resolve, reject) => {
       try {
         let result = await this.sessionDB.doQuery(isAllowedSql, sessionID, role);
-        resolve(result.legth > 0);
+        resolve(result.length > 0);
       } catch(err) {
         reject(fatalError(err));
       }
@@ -68,7 +68,7 @@ module.exports = class SessionStorage {
     return new Promise(async (resolve, reject) => {
       try {
         let result = await this.sessionDB.doQuery(insertSessionSql, sessionID, username);
-        resolve(result.length > 0);
+        resolve(result.affectedCount > 0);
       } catch(err) {
         reject(fatalError(err));
       }

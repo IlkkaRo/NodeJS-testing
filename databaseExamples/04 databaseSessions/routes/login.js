@@ -13,11 +13,14 @@ module.exports = (sessionStorage) => {
         } else {
           let passwordOK =
             await sessionStorage.checkPassword(req.body.name, req.body.password);
+
           if (!passwordOK) {
             res.render('info',
               errorMessage('Not allowed to use this site', '/', 'Access denied'));
           } else {
             let user = await sessionStorage.getUser(req.sessionID);
+            console.log(req.sessionID, user);
+
             if (user.length > 0) {
               if (user[0].username === req.body.name) {
                 res.render('info',
@@ -31,6 +34,7 @@ module.exports = (sessionStorage) => {
             } else {
               let addSessionOK  =
                   await sessionStorage.addSession(req.sessionID, req.body.name);
+              console.log(addSessionOK);
               if (addSessionOK) {
                 res.render('info', statusMessage('You are logged in.'));
               } else {

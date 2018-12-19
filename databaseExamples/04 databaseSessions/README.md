@@ -23,7 +23,7 @@ create index.js and other files necessary.
   node index
   ```
 
-Or if you addes start-script to package.json
+Or if you added start-script to package.json
 
   ```shell
   npm start
